@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes cursor-blink {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+@keyframes glitch {
+  0% {
+    text-shadow: 2px 0 #00ff00, -2px 0 #ff0000;
+  }
+  25% {
+    text-shadow: -2px 0 #00ff00, 2px 0 #ff0000;
+  }
+  50% {
+    text-shadow: 2px 0 #ff0000, -2px 0 #00ff00;
+  }
+  75% {
+    text-shadow: -2px 0 #ff0000, 2px 0 #00ff00;
+  }
+  100% {
+    text-shadow: 2px 0 #00ff00, -2px 0 #ff0000;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+.terminal-cursor::after {
+  content: "_";
+  animation: cursor-blink 1s infinite;
+}
+
+.cyberpunk-glitch {
+  animation: glitch 3s infinite;
+}
+
+.terminal-bg {
+  background-color: #0a0a0a;
+  background-image: radial-gradient(#1a1a1a 1px, transparent 1px);
+  background-size: 32px 32px;
+}
